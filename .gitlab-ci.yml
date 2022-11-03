@@ -1,0 +1,36 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  MAJOR_VERSION_NO: 1
+  MINOR_VERSION_NO: $CI_PIPELINE_IID
+
+build:
+  stage: build
+  tags:
+    - builder
+    - slxd0029
+  script:
+    - docker image build -t registry.eiffage.com/file_explorer_api:${MAJOR_VERSION_NO}.${MINOR_VERSION_NO} .
+    - docker push registry.eiffage.com/file_explorer_api:${MAJOR_VERSION_NO}.${MINOR_VERSION_NO}
+  only:
+    - main
+
+deploy_dev:
+  tags:
+    - slxd0029
+  stage: deploy
+  variables:
+    VERTICA_ENV: dev
+    PORT: 6801
+    DEPLOY_ENV: d1
+    DEPLOY_ENV_NETWORK: d1
+    COMPOSE_PROJECT_NAME: d1
+    ROOT_PATH: /
+  script:
+    - docker pull registry.eiffage.com/file_explorer_api:${MAJOR_VERSION_NO}.${MINOR_VERSION_NO}
+    - docker-compose up --build -d --force-recreate
+  only:
+    - main
+

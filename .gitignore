@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+__pycache__
+.pytest_cache
+.env.local
+venv
+logs
+.idea
+vertica_config_local
