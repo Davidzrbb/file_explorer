@@ -1,0 +1,13 @@
+module_db_host = "r1odsgldb01"
+
+module_db_port = 5433
+
+module_db_user = "dbadmin"
+
+module_db_password = ""
+
+module_db_name = "r1odsgl1"
+
+log_sql = true
+
+env="staging"

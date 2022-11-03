@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  file_explorer_api:
+    container_name: ${DEPLOY_ENV}_file_explorer_api
+    image: registry.eiffage.com/file_explorer_api:${MAJOR_VERSION_NO}.${MINOR_VERSION_NO}
+    restart: unless-stopped
+    environment:
+      - VERTICA_ENV=$VERTICA_ENV
+      - ROOT_PATH=$ROOT_PATH
+    ports:
+      - ${PORT}:8000
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+
+networks:
+  default:
+    external:
+      name: ${DEPLOY_ENV_NETWORK}mutgl1_net-001

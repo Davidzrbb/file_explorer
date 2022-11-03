@@ -1,0 +1,30 @@
+anyio==3.6.2
+click==8.1.3
+colorama==0.4.6
+fastapi==0.85.1
+greenlet==1.1.3.post0
+h11==0.14.0
+httptools==0.5.0
+idna==3.4
+importlib-metadata==5.0.0
+module-sqlalchemy @ git+http://gitlab+deploy-token-11:ZqVxXLjJ_wcXzzQGv7M9@slxd0029.app.eiffage.loc:8081/valnoel/module-sqlalchemy.git@36ac6d5d8724925283b494c9f6f4bc55585e6a92
+module-vertica @ git+http://gitlab+deploy-token-5:gKTYaVnWu7rkuifh9PSy@slxd0029.app.eiffage.loc:8081/valnoel/module_vertica.git@4b7b51579f26ed85686a16c6c5f43c7234f9e218
+pydantic==1.10.2
+python-dateutil==2.8.2
+python-dotenv==0.21.0
+PyYAML==6.0
+six==1.16.0
+sniffio==1.3.0
+SQLAlchemy==1.4.42
+sqlalchemy-vertica-python==0.5.10
+sqlparse==0.4.3
+starlette==0.20.4
+typing_extensions==4.4.0
+uvicorn==0.19.0
+vertica-python==1.1.1
+watchfiles==0.18.0
+websockets==10.4
+zipp==3.10.0
+
+http3~=0.6.7
+requests~=2.28.1
