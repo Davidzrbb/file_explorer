@@ -1,4 +1,6 @@
 from pydantic import BaseModel, Field
+from typing import Optional
+from datetime import datetime, timedelta
 
 
 def to_camel(string: str) -> str:
@@ -17,3 +19,10 @@ class InstanceFluxRequest(CamelCaseModel):
     pattern: str
     also_search_in_archive: bool
     recursive_search: bool
+
+
+class ResponseModel(CamelCaseModel):
+    type: str
+    name: str
+    list_sub_obj: list
+    last_modified_date: datetime
